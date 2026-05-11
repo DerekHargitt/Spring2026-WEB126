@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kansas City Confidential (1952) — Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080808;
+  --surface: #111111;
+  --surface2: #1a1a1a;
+  --accent: #b91c1c;
+  --accent2: #7f1d1d;
+  --gold: #c9a84c;
+  --text: #e8e6e1;
+  --muted: #7a7570;
+  --border: #252525;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Text', Georgia, serif;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(8,8,8,0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 64px;
+}
+
+.nav-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0;
+}
+
+.nav-links a {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 20px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.nav-links a.active {
+  color: var(--gold);
+}
+
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://upload.wikimedia.org/wikipedia/en/0/00/KCConfidential.jpg');
+  background-size: cover;
+  background-position: center top;
+  transform: scale(1.04);
+  filter: brightness(0.35) contrast(1.2) sepia(0.2);
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8,8,8,0.1) 0%,
+    rgba(8,8,8,0.0) 30%,
+    rgba(8,8,8,0.5) 60%,
+    rgba(8,8,8,0.98) 100%
+  );
+}
+
+.hero-side-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(8,8,8,0.8) 0%,
+    transparent 60%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 60px 80px;
+  width: 100%;
+}
+
+.hero-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-tag::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  max-width: 700px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-meta {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+.hero-meta-item {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-meta-item strong {
+  display: block;
+  color: var(--text);
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.hero-desc {
+  font-size: 19px;
+  line-height: 1.55;
+  color: #c0bdb8;
+  max-width: 520px;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-primary {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover { background: #991b1b; }
+
+.btn-secondary {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 14px 32px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+
+.rating-bar {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.rating-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating-stat {
+  padding: 28px 0;
+  text-align: center;
+  flex: 1;
+  border-right: 1px solid var(--border);
+}
+
+.rating-stat:last-child { border-right: none; }
+
+.rating-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.rating-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 60px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.section-number {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  background: var(--border);
+}
+
+.feature-card {
+  background: var(--surface);
+  padding: 36px;
+  transition: background 0.2s;
+}
+
+.feature-card:hover { background: var(--surface2); }
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.feature-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.feature-link {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.feature-link::after { content: ' →'; }
+
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-poster {
+  position: relative;
+}
+
+.about-poster img {
+  width: 100%;
+  display: block;
+  filter: contrast(1.05) brightness(0.9);
+}
+
+.about-poster::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 5px solid var(--gold);
+  
+  pointer-events: none;
+}
+
+
+
+.about-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.about-body {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #c0bdb8;
+  margin-bottom: 16px;
+}
+
+.about-body:first-of-type::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 900;
+  float: left;
+  line-height: 0.75;
+  margin: 8px 10px 0 0;
+  color: var(--gold);
+}
+
+.divider {
+  width: 48px;
+  height: 2px;
+  background: var(--accent);
+  margin: 28px 0;
+}
+
+
+.pullquote-section {
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  border-right: 3px solid var(--accent);
+}
+
+.pullquote-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 80px;
+  text-align: center;
+}
+
+.pullquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.pullquote::before { content: '\201C'; color: var(--gold); }
+.pullquote::after { content: '\201D'; color: var(--gold); }
+
+.pullquote-source {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+
+.trailer-block {
+  position: relative;
+  background: #000;
+}
+
+.trailer-block iframe {
+  width: 100%;
+  height: 480px;
+  display: block;
+  border: none;
+}
+
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.info-table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.info-table td {
+  padding: 16px 0;
+  font-size: 17px;
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  width: 140px;
+  padding-top: 18px;
+}
+
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--border);
+}
+
+.two-col > * { background: var(--surface); }
+
+
+footer {
+  background: #000;
+  border-top: 1px solid var(--border);
+  margin-top: 0;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 48px 60px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+  gap: 40px;
+}
+
+.footer-brand {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.footer-nav a {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-nav a:hover { color: var(--text); }
+
+.footer-credits {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+  line-height: 2;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #3a3a3a;
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+  .hero-content { padding: 0 24px 60px; }
+  .section { padding: 60px 24px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; text-align: center; }
+  .footer-credits { text-align: center; }
+  .rating-inner { flex-wrap: wrap; }
+  .rating-stat { min-width: 50%; border-right: none; border-bottom: 1px solid var(--border); }
+  .nav-inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="home.html">KC Confidential</a>
+    <div class="nav-links">
+      <a href="home.html" class="active">Home</a>
+      <a href="story.html">Story</a>
+      <a href="media.html">Media</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-side-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Film Noir · 1952 · Public Domain</div>
+    <h1 class="hero-title">Kansas City<br><em>Confidential</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <strong>1952</strong>Year
+      </div>
+      <div class="hero-meta-item">
+        <strong>99 min</strong>Runtime
+      </div>
+      <div class="hero-meta-item">
+        <strong>Phil Karlson</strong>Director
+      </div>
+      <div class="hero-meta-item">
+        <strong>Film Noir</strong>Genre
+      </div>
+    </div>
+    <p class="hero-desc">An ex-con trying to go straight is framed for a million dollar armored car robbery and must go to Mexico in order to unmask the real culprits.</p>
+    <div class="hero-actions">
+      <a href="media.html" class="btn-primary">Watch the Film</a>
+      <a href="story.html" class="btn-secondary">Read the Story</a>
+    </div>
+  </div>
+</section>
+
+
+<div class="rating-bar">
+  <div class="rating-inner">
+    <div class="rating-stat">
+      <span class="rating-value">7.3</span>
+      <span class="rating-label">IMDb Rating</span>
+    </div>
+    <div class="rating-stat">
+      <span class="rating-value">99<span style="font-size:22px">min</span></span>
+      <span class="rating-label">Runtime</span>
+    </div>
+    <div class="rating-stat">
+      <span class="rating-value">B&amp;W</span>
+      <span class="rating-label">Format</span>
+    </div>
+    <div class="rating-stat">
+      <span class="rating-value">NR</span>
+      <span class="rating-label">Rating</span>
+    </div>
+    <div class="rating-stat">
+      <span class="rating-value">Free</span>
+      <span class="rating-label">Public Domain</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="section-head">
+    <span class="section-number">01</span>
+    <h2 class="section-title">Featured</h2>
+  </div>
+
+  <div class="featured-grid">
+    <div class="feature-card">
+      <div class="feature-icon">▶</div>
+      <h3>Watch Trailer</h3>
+      <p>The original theatrical trailer captures the tense atmosphere and double-cross drama that made this film a classic of the genre.</p>
+      <a href="media.html#trailer" class="feature-link">View Trailer</a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">♫</div>
+      <h3>Listen Now</h3>
+      <p>Stream Paul Sawtell's brooding, jazz-inflected score — a defining sonic element that anchors the film's shadowy tension throughout.</p>
+      <a href="https://www.youtube.com/watch?v=5k-CdR48TSo" class="feature-link" target="_blank">Stream Audio</a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">▣</div>
+      <h3>Watch Full Film</h3>
+      <p>Available in the public domain via the Internet Archive, the complete film is free to stream in restored quality.</p>
+      <a href="media.html#film" class="feature-link">Full Film</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="section" style="padding-top:0">
+  <div class="section-head">
+    <span class="section-number">02</span>
+    <h2 class="section-title">About the Film</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-poster">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/00/KCConfidential.jpg" alt="Kansas City Confidential Poster">
+    </div>
+    <div class="about-content">
+      <div class="about-eyebrow">Phil Karlson, 1952</div>
+      <h2 class="about-title">Trust No One.<br>Believe Nothing.</h2>
+      <p class="about-body">In the shadow of Kansas City's postwar streets, a meticulously executed armored car robbery sets into motion a spiral of paranoia, disguise, and revenge that would define hard-boiled cinema for a generation.</p>
+      <p class="about-body">Joe Rolfe, an ex-convict trying to walk the straight line, finds himself framed by an unseen mastermind who has recruited three criminals, each concealed behind coded masks — ensuring no one can betray the others.</p>
+      <div class="divider"></div>
+      <table class="info-table">
+        <tr><td>Director</td><td>Phil Karlson</td></tr>
+        <tr><td>Screenplay</td><td>George Bruce &amp; Harry Essex</td></tr>
+        <tr><td>Starring</td><td>John Payne, Coleen Gray, Preston Foster</td></tr>
+        <tr><td>Studio</td><td>United Artists</td></tr>
+        <tr><td>Released</td><td>October 17, 1952</td></tr>
+        <tr><td>Status</td><td>Public Domain (United States)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<div class="pullquote-section">
+  <div class="pullquote-inner">
+    <p class="pullquote">A rough and tough little film noir, KANSAS CITY CONFIDENTIAL is brimming with slapping, punching and shooting along its eventful course.</p>
+    <span class="pullquote-source">Film Noir Board</span>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="section-head">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Watch the Trailer</h2>
+  </div>
+  <div class="trailer-block">
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3MqGEAmcsLw?si=6nXlTJKQz280liLl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+<div class="section" style="padding-top:0">
+  <div class="section-head">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Explore</h2>
+  </div>
+  <div class="two-col">
+    <a href="story.html" style="display:block;padding:48px;text-decoration:none;color:inherit;">
+      <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">→ Story</div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;margin-bottom:14px;">The Full Story</div>
+      <p style="font-size:17px;color:var(--muted);line-height:1.6;">Dive into the synopsis, cast biographies, and the production history behind one of Phil Karlson's finest works.</p>
+    </a>
+    <a href="media.html" style="display:block;padding:48px;text-decoration:none;color:inherit;">
+      <div style="font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">→ Media</div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;margin-bottom:14px;">Media Gallery</div>
+      <p style="font-size:17px;color:var(--muted);line-height:1.6;">Browse still photography, original posters, the full film, and audio tracks from the Internet Archive and Wikimedia Commons.</p>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      Kansas City Confidential<br>
+      © 1952 United Artists<br>
+      Public Domain in the United States
+    </div>
+    <div class="footer-nav">
+      <a href="home.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="media.html">Media</a>
+    </div>
+    <div class="footer-credits">
+      Poster: Wikimedia Commons<br>
+      Film: Internet Archive<br>
+      Audio: YouTube
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Public Domain Film · Educational Use
+  </div>
+</footer>
+
+</body>
+</html>
